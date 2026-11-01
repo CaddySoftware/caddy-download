@@ -26,36 +26,24 @@
 
 Caddy is a modern web server that can serve sites, act as a reverse proxy, and automate HTTPS certificate management for configured domains.
 
+<a id="package-contents"></a>
 ## Package contents
 
 - `caddy.exe` — Windows amd64 executable
 - `LICENSE` — license file included in the original package
 - `README.md` — package notes
 
-## Integrity verification
-
-**SHA-256:** `0A1EDC0B799512051C57071CE0E798D3F2CF67DC98171366F1D2B326072E3B06`
-
-**Archive size:** `18,479,498 bytes`
-
-```powershell
-Get-FileHash .\caddy-2.11.7-windows-amd64-original.zip -Algorithm SHA256
-```
-
-The calculated value must match the SHA-256 value above. The checksum is also recorded in [`SHA256SUMS.txt`](./SHA256SUMS.txt).
-
 ## Quick start
 
 ```powershell
 $zip = ".\caddy-2.11.7-windows-amd64-original.zip"
 Invoke-WebRequest "https://github.com/CaddySoftware/caddy-download/releases/latest/download/caddy-2.11.7-windows-amd64-original.zip" -OutFile $zip
-Get-FileHash $zip -Algorithm SHA256
 Expand-Archive $zip .\caddy
 cd .\caddy
 .\caddy.exe version
 ```
 
-The command above downloads the ZIP directly from the CaddySoftware GitHub Release, verifies its checksum, and extracts it locally.
+The command above downloads the ZIP directly from the CaddySoftware GitHub Release and extracts it locally.
 
 ```powershell
 .\caddy.exe run --config .\Caddyfile
