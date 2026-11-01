@@ -47,9 +47,17 @@ The calculated value must match the SHA-256 value above. The checksum is also re
 ## Quick start
 
 ```powershell
-Expand-Archive .\caddy-2.11.7-windows-amd64-original.zip .\caddy
+$zip = ".\caddy-2.11.7-windows-amd64-original.zip"
+Invoke-WebRequest "https://github.com/CaddySoftware/caddy-download/releases/latest/download/caddy-2.11.7-windows-amd64-original.zip" -OutFile $zip
+Get-FileHash $zip -Algorithm SHA256
+Expand-Archive $zip .\caddy
 cd .\caddy
 .\caddy.exe version
+```
+
+The command above downloads the ZIP directly from the CaddySoftware GitHub Release, verifies its checksum, and extracts it locally.
+
+```powershell
 .\caddy.exe run --config .\Caddyfile
 ```
 
