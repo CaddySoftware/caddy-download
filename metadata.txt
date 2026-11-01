@@ -1,0 +1,4 @@
+ZIP=caddy-2.11.7-windows-amd64-original.zip
+SHA256=0A1EDC0B799512051C57071CE0E798D3F2CF67DC98171366F1D2B326072E3B06
+SIZE=18479498
+SOURCE=https://github.com/CaddySoftware/caddy-download/releases/latest/download/caddy-2.11.7-windows-amd64-original.zip
